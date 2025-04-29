@@ -5,6 +5,7 @@ const timeDisplay = document.getElementById("time");
 let correctAnswer;
 let start = false;
 let Ts = document.getElementById("true");
+let tf = document.getElementById("false");
 let countdownInterval;
 const continer = document.getElementById("game");
 let gameOver = document.createElement("div");
@@ -28,7 +29,11 @@ const setupClickListeners = () => {
 
         generate(); // Next question
       } else {
-        alert("Wrong!");
+        tf.classList.add("active-f");
+
+        setTimeout(() => {
+          tf.classList.remove("active-f");
+        }, 1000);
       }
     });
   }
